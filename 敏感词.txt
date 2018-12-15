@@ -1,0 +1,7 @@
+with open(r'C:\Users\顾伟强\filtered_words.txt') as f:
+	for w in f.readlines():
+		a=input()
+		for w in a:
+			if w in a:
+				a= a.replace(w,'*'*len(w))
+		print(a)

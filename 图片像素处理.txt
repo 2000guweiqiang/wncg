@@ -1,0 +1,14 @@
+from PIL import Image
+import os
+path = r'C:\Users\顾伟强\Pictures\gwq'
+resultpath = r'C:\Users\顾伟强\Pictures\gwq'
+def change_size(path):
+    w=2436
+    d=1125
+for picname in os.listdir(path):
+    picpath = os.path.join(path, picname)
+    print(picpath)
+    with Image.open(picpath) as im:
+        im=im.resize((800,600),Image.ANTIALIAS)
+        im.save(resultpath+'/更改后_' + picname.split('.')[0] + '.jpg', 'jpeg')
+from PIL import Image

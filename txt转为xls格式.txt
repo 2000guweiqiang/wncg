@@ -1,0 +1,9 @@
+import xlwt,json
+	with open(r'C:\Users\顾伟强\city.txt') as f:
+	data = json.load(f)
+	workbook = xlwt.Workbook()
+	sheet1 = workbook.add_sheet('city', cell_overwrite_ok=True)
+	for index, (key, value) in enumerate(data.items()):
+		sheet1.write(index, 0, key)
+		sheet1.write(index, 1, value)
+	workbook.save(r'C:\Users\顾伟强\city.xls')
